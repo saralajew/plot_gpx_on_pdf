@@ -1,0 +1,6 @@
+gpxplotter
+matplotlib
+numpy
+pymupdf
+scipy
+streamlit
