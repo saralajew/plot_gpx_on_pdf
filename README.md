@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 Then, run the app by:
 ```
-stramlit run main.py
+streamlit run main.py
 ```
 
 In the App, just upload your background PDF and the corresponding GPX file, and tune
