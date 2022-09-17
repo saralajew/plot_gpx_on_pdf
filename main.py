@@ -1,3 +1,8 @@
+"""Copyright (C) 2022  Sascha Saralajew
+
+Licensed under GNU Affero General Public License (see LICENSE)
+"""
+
 import streamlit as st
 
 from backend import Backend

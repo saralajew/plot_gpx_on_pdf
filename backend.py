@@ -1,3 +1,8 @@
+"""Copyright (C) 2022  Sascha Saralajew
+
+Licensed under GNU Affero General Public License (see LICENSE)
+"""
+
 from pathlib import Path
 from typing import Optional, Tuple
 
@@ -67,15 +72,13 @@ class Backend:
         else:
             return None
 
-        # To get better resolution
-        zoom_x = 2.0  # horizontal zoom
-        zoom_y = 2.0  # vertical zoom
-        mat = fitz.Matrix(zoom_x, zoom_y)  # zoom factor 2 in each dimension
+        zoom = 2.0
+        mat = fitz.Matrix(zoom, zoom)
 
-        doc = fitz.open(path)  # open document
+        doc = fitz.open(path)
         page = doc[0]
-        pix = page.get_pixmap(matrix=mat)  # render page to an image
-        pix.save(self.pdf_snip_path)  # store image as a PNG
+        pix = page.get_pixmap(matrix=mat)
+        pix.save(self.pdf_snip_path)
 
     def merge_pdfs(self) -> None:
         background = fitz.open(self.background_pdf_path)
