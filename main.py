@@ -169,7 +169,7 @@ with st.sidebar:
             "Set the zero elevation level:",
             min_value=0,
             max_value=8848,
-            value=int(backend.zero_elevation_level()),  # type: ignore
+            value=int(backend.zero_elevation_level()),
         )
         x_label_text = st.text_input("X-label text:", value="Entfernung - [km]")
         y_label_text = st.text_input("Y-label text:", value="Höhe - [hm]")

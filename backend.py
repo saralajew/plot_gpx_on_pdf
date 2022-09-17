@@ -17,7 +17,7 @@ class Backend:
         self._merge_pdf_path = merge_pdf_path
 
         self._pdf_size: Optional[Tuple[float, float]] = None
-        self._gpx_segment: dict = {}
+        self._gpx_segment: Optional[dict] = None
 
         self._pdf_snip_path = str(Path(self._merge_pdf_path).parent / "pdf_snip.png")
 
@@ -116,12 +116,12 @@ class Backend:
 
         self._gpx_segment = track["segments"][0]
 
-    def zero_elevation_level(self) -> Optional[float]:
+    def zero_elevation_level(self) -> float:
         if self._gpx_segment is not None:
             zero_level = np.min(self._gpx_segment["elevation"]) * 0.95
             return zero_level
         else:
-            return None
+            return 0
 
     def plot(
         self,
