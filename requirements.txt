@@ -1,7 +1,6 @@
-gpxplotter
+git+https://github.com/andersle/gpxplotter
 matplotlib
 numpy
 pymupdf
-scikit-learn
 scipy
 streamlit
