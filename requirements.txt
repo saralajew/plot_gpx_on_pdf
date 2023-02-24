@@ -2,5 +2,6 @@ gpxplotter
 matplotlib
 numpy
 pymupdf
+scikit-learn
 scipy
 streamlit
