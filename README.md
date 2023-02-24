@@ -16,8 +16,8 @@ the plot settings. When you are done, just download the PDF.
 
 The backend of the App works as a standalone Python package.
 
-Note the [License](License) of the Python files and note that the Itim font is licensed 
+Note the [License](License) of the Python files and note that the Itim font is licensed
 under [OFL](Itim/OFL.txt).
 
-The online running streamlit can be found 
+The online running streamlit can be found
 [here](https://plot-gpx-on-pdf.streamlit.app/).
