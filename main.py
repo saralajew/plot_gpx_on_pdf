@@ -158,18 +158,24 @@ if gpx_file is not None:
     try:
         track = next(gpx)
     except StopIteration:
-        raise ValueError("No track in GPX file.")
+        st.error("No track in GPX file.")
+        track = None
 
     try:
         next(gpx)
-        raise ValueError("More than one tracks in GPX file. This not supported!")
+        st.error("More than one tracks in GPX file. This not supported!")
+        track = None
     except StopIteration:
         pass
 
-    if len(track["segments"]) > 1:
-        raise ValueError("More than one segments in GPX file. This not supported!")
+    if track is not None and len(track["segments"]) > 1:
+        st.error("More than one segments in GPX file. This not supported!")
+        track = None
 
-    gpx_segment = track["segments"][0]
+    if track is not None:
+        gpx_segment = track["segments"][0]
+    else:
+        gpx_segment = None
 else:
     gpx_segment = None
 
